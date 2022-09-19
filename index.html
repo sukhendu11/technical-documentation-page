@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ReactJs Documentation Page</title>
+        <link rel="stylesheet" href="./public/style.css">
+    </head>
+    <body>
+  <nav id="navbar">
+    
+    <h1>ReactJS Documentation</h1>
+    <ul id="nav-list">
+      <li><a class="nav-link" href="#Hello_World">Hello World</a></li>
+      <li><a class="nav-link" href="#Introducing_JSX">Introducing JSX</a></li>
+      <li><a class="nav-link" href="#Rendering_Elements">Rendering Elements</a></li>
+      <li><a class="nav-link" href="#Components_and_Props">Components and Props</a></li>
+      <li><a class="nav-link" href="#State_and_Lifecycle">State and Lifecycle</a></li>
+      <li><a class="nav-link" href="#Handling_Events">Handling Events</a></li>
+      <li><a class="nav-link" id="nav-bottom" href="#Conditional_Rendering">Conditional Rendering</a></li>
+    </ul>
+  </nav>
+  <main id="main-doc">
+    <section class="main-selection">
+      <article>
+        <h1 id="Hello_World">Hello World</h1>
+        <p class="gray-title">The smallest React example looks like this:</p>
+        <code class="code"><span class="variable">const</span> root = ReactDOM.createRoot(document.getElementById('root'));<br>
+          root.render(&lt;h1&gt;Hello, world!&lt;/h1&gt;);</code>
+        <p>It displays a heading saying “Hello, world!” on the page.</p>
+      </article>
+    </section>
+    
+    <section class="main-selection">
+      <article>
+        <h1 id="Introducing_JSX">Introducing JSX</h1>
+        <p class="gray-title">Consider this variable declaration:</p>
+        <code class="code"><span class="variable">const</span> element = &lt;h1&gt;Hello, world!&lt;/h1&gt;</code>
+        <p>This funny tag syntax is neither a string nor HTML.</p>
+        <p>It is called JSX, and it is a syntax extension to JavaScript. We recommend using it with React to describe what the UI should look like. JSX may remind you of a template language, but it comes with the full power of JavaScript.</p>
+        <p>JSX produces React “elements”. We will explore rendering them to the DOM in the next section. Below, you can find the basics of JSX necessary to get you started.</p>   
+      </article>   
+    </section>
+    
+    <section class="main-selection">
+      <article>
+        <h1 id="Rendering_Elements">Rendering Elements</h1>
+        <p class="gray-title">Elements are the smallest building blocks of React apps.</p>
+        <code class="code">const element = &lt;h1&gt;Hello, world&lt;/h1&gt;;</code>
+        <p>Unlike browser DOM elements, React elements are plain objects, and are cheap to create. React DOM takes care of updating the DOM to match the React elements.</p>
+      </article>
+    </section>
+    
+    <section class="main-selection">
+      <article>
+        <h1 id="Components_and_Props">Components and Props</h1>
+        <p class="gray-title">Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. This page provides an introduction to the idea of components.</p>
+        <code class="code">function Welcome(props) {
+     return &lt;h1&gt;Hello, {props.name}&lt;/h1&gt;;
+  }</code>
+        <p>This function is a valid React component because it accepts a single “props” (which stands for properties) object argument with data and returns a React element. We call such components “function components” because they are literally JavaScript functions.</p>
+        <p>You can also use an ES6 class to define a component:</p>
+        <code class="code">class Welcome extends React.Component {
+    render() {
+      return &t;h1&gt;Hello, {this.props.name}&lt;/h1&gt;;
+       }       
+  }</code>
+        <p>The above two components are equivalent from React’s point of view.</p> 
+      </article>   
+    </section>
+    
+    <section class="main-selection">
+      <article>
+        <h1 id="State_and_Lifecycle">State and Lifecycle</h1>
+        <p class="gray-title">This page introduces the concept of state and lifecycle in a React component.</p>
+        <p>Consider the ticking clock example from one of the previous sections. In Rendering Elements, we have only learned one way to update the UI. We call root.render() to change the rendered output:</p>
+        <code class="code">const root = ReactDOM.createRoot(document.getElementById('root'));
+    
+  function tick() {
+    const element = (
+      &lt;div&gt;
+        &lt;h1&gt;Hello, world!&lt;/h1&gt;
+        &lt;h2&gt;It is {new Date().toLocaleTimeString()}.&lt;/h2&gt;
+      &lt;/div&gt;
+    );
+    root.render(element);
+  }
+  
+  setInterval(tick, 1000);</code>
+      </article>   
+    </section>
+    
+    <section class="main-selection">
+      <article>
+        <h1 id="Handling_Events">Handling Events</h1>
+        <p class="gray-title">Handling events with React elements is very similar to handling events on DOM elements. There are some syntax differences:.</p>
+        <ul id="handling-list">
+          <li>React events are named using camelCase, rather than lowercase.</li>
+          <li>With JSX you pass a function as the event handler, rather than a string.</li> 
+        </ul>
+        <p>For example, the HTML:</p>
+        <code class="code">&lt;button onclick="activateLasers()"&gt;
+    Activate Lasers
+  &lt;/button&gt;</code>
+        <p>is slightly different in React:</p>
+        <code class="code">&lt;button onClick={activateLasers}&gt;
+    Activate Lasers
+  &lt;/button&gt;</code>
+      </article> 
+    </section>
+    
+    <section class="main-selection">
+      <article>
+        <h1 id="Conditional_Rendering">Conditional Rendering</h1>
+        <p class="gray-title">In React, you can create distinct components that encapsulate behavior you need. Then, you can render only some of them, depending on the state of your application.</p>
+        <p>Conditional rendering in React works the same way conditions work in JavaScript. Use JavaScript operators like if or the conditional operator to create elements representing the current state, and let React update the UI to match them.</p>
+      </article>
+    </section>
+  </main>
+  </body>
+  
